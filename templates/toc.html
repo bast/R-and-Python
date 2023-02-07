@@ -1,0 +1,9 @@
+{% set data = load_data(path="content/toc.yml") %}
+
+<ul>
+  {% for item in data.toc %}
+    <li>
+      <a href="/{{ item.folder }}/">{{ item.title }}</a>
+    </li>
+  {% endfor %}
+</ul>

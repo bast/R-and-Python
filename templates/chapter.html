@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set data = load_data(path="content/toc.yml") %}
+
+  {% for item in data.toc %}
+    {% set _path = "/" ~ item.folder ~ "/" %}
+    {% if section.path == _path %}
+      <h1>{{ item.title }}</h1>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {% set folder = section.path | replace(from="/", to="")  %}
+  {% set left = get_page(path=folder ~ "/python.md") %}
+  {% set right = get_page(path=folder ~ "/R.md") %}
+
+  <div uk-grid>
+    <div class="uk-width-1-2@m">
+      {{ left.content | safe }}
+    </div>
+    <div class="uk-width-1-2@m">
+      {{ right.content | safe }}
+    </div>
+  </div>
+{% endblock content %}
