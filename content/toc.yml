@@ -1,0 +1,14 @@
+---
+toc:
+  - title: "Starting an interactive shell"
+    folder: "shell"
+  - title: "Running a script"
+    folder: "script"
+  - title: "Tuples/lists/vectors"
+    folder: "vectors"
+  - title: "Functions"
+    folder: "functions"
+  - title: "Getting help"
+    folder: "help"
+  - title: "Pitfalls that surprise"
+    folder: "pitfalls"
