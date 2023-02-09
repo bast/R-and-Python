@@ -6,13 +6,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
-* {
-  font-family: 'Roboto Mono', monospace;
+body {
+  font-family: 'Roboto', sans-serif;
 }
 
-p,
-a {
-  font-family: 'Roboto', sans-serif;
+pre {
+  font-family: 'Roboto Mono', monospace;
 }
 
 .markdown ul {
