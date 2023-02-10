@@ -10,10 +10,10 @@ print(experiment)
 print(experiment$location)
 
 # update one item
-experiment$num_measurements = 24
+experiment$num_measurements <- 24
 
 # insert a new item
-experiment$temperature = -5.0
+experiment$temperature <- -5.0
 
 # print the updated list
 print(experiment)
