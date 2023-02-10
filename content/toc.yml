@@ -6,6 +6,8 @@ toc:
     folder: "script"
   - title: "Tuples/lists/vectors"
     folder: "vectors"
+  - title: "Dictionaries (Python)/ lists (R)"
+    folder: "lists"
   - title: "Functions"
     folder: "functions"
   - title: "Getting help"
