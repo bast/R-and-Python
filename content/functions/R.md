@@ -9,11 +9,13 @@ num_small_elements <- function(v, threshold) {
             n <- n + 1
         }
     }
-    return(n)
+    n
 }
 
 
-print(num_small_elements(c(1, 2, 4, 7, 11), 5))
+result <- num_small_elements(c(1, 2, 4, 7, 11), 5)
+
+cat("there are", result, "small elements\n")
 ```
 
 Default arguments seem to work the same way.

@@ -10,5 +10,7 @@ def num_small_elements(v, threshold):
     return n
 
 
-print(num_small_elements([1, 2, 4, 7, 11], 5))
+result = num_small_elements([1, 2, 4, 7, 11], 5)
+
+print(f"there are {result} small elements")
 ```
