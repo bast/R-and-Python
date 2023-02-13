@@ -3,7 +3,10 @@
 
 ```bash
 $ R
+```
 
+This opens the shell:
+```
 R version 4.2.1 (2022-06-23) -- "Funny-Looking Kid"
 Copyright (C) 2022 The R Foundation for Statistical Computing
 Platform: x86_64-pc-linux-gnu (64-bit)
