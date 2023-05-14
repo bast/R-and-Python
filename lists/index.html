@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>R for Python developers and Python for R developers</title>
+    <link rel="shortcut icon" href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;/img/favicon.ico">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/css/uikit.min.css" integrity="sha256-f3SVFXP30MgahZ0Z7Lp1W02MuLgtiAtk8uFqTbGxNfY=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/js/uikit.min.js" integrity="sha256-gHEvLzvpjU93VFTgu5myAgmc+0I1CzBzYe0YhTJ8uqI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/js/uikit-icons.min.js" integrity="sha256-PxrcCuBlFkPVlPsGxNzt59W3EKYOH79z+v/tq9uFS2M=" crossorigin="anonymous"></script>
+
+    <link href="https://bast.github.io/R-and-Python/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="uk-container uk-container-expand uk-margin-large-bottom uk-margin-large-top">
+
+      <div class="markdown">
+        <div uk-grid>
+          <div class="uk-width-1-4@m">
+            
+
+<ul>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;shell/">Starting an interactive shell</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;script/">Running a script</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;command/">Running from command line</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;vectors/">Tuples&#x2F;lists&#x2F;vectors</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;lists/">Dictionaries (Python)&#x2F; lists (R)</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;filter/">Filtering</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;functions/">Functions</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;help/">Getting help</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;pitfalls/">Pitfalls that surprise</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;profiling/">Profiling memory and CPU time</a>
+    </li>
+  
+</ul>
+
+          </div>
+          <div class="uk-width-3-4@m">
+            
+  
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      <h1>Dictionaries (Python)&#x2F; lists (R)</h1>
+      
+
+  
+  
+  
+
+  <div uk-grid>
+    <div class="uk-width-1-2@m">
+      <h3>Python</h3>
+      <pre data-lang="python" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-python "><code class="language-python" data-lang="python"><span>experiment </span><span style="color:#72ab00;">= </span><span>{</span><span style="color:#d07711;">&quot;location&quot;</span><span>: </span><span style="color:#d07711;">&quot;Svalbard&quot;</span><span>, </span><span style="color:#d07711;">&quot;date&quot;</span><span>: </span><span style="color:#d07711;">&quot;2021-03-23&quot;</span><span>, </span><span style="color:#d07711;">&quot;num_measurements&quot;</span><span>: </span><span style="color:#b3933a;">23</span><span>}
+</span><span>
+</span><span style="color:#b39f04;">print</span><span>(experiment)
+</span><span>
+</span><span style="color:#7f8989;"># print one item
+</span><span style="color:#b39f04;">print</span><span>(experiment[</span><span style="color:#d07711;">&quot;location&quot;</span><span>])
+</span><span>
+</span><span style="color:#7f8989;"># update one item
+</span><span>experiment[</span><span style="color:#d07711;">&quot;num_measurements&quot;</span><span>] </span><span style="color:#72ab00;">= </span><span style="color:#b3933a;">24
+</span><span>
+</span><span style="color:#7f8989;"># insert a new item
+</span><span>experiment[</span><span style="color:#d07711;">&quot;temperature&quot;</span><span>] </span><span style="color:#72ab00;">= -</span><span style="color:#b3933a;">5.0
+</span><span>
+</span><span style="color:#7f8989;"># print the updated dictionary
+</span><span style="color:#b39f04;">print</span><span>(experiment)
+</span></code></pre>
+
+    </div>
+    <div class="uk-width-1-2@m">
+      <h3>R</h3>
+      <pre data-lang="r" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-r "><code class="language-r" data-lang="r"><span>experiment </span><span style="color:#72ab00;">&lt;- </span><span style="color:#668f14;">list</span><span>(</span><span style="color:#5597d6;">location</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&quot;Svalbard&quot;</span><span>, </span><span style="color:#5597d6;">date</span><span style="color:#72ab00;">=</span><span style="color:#d07711;">&quot;2021-03-23&quot;</span><span>, </span><span style="color:#5597d6;">num_measurements</span><span style="color:#72ab00;">=</span><span style="color:#b3933a;">23</span><span>)
+</span><span>
+</span><span style="color:#b39f04;">print</span><span>(experiment)
+</span><span>
+</span><span style="color:#7f8989;"># print one item
+</span><span style="color:#b39f04;">print</span><span>(experiment</span><span style="color:#72ab00;">$</span><span>location)
+</span><span>
+</span><span style="color:#7f8989;"># update one item
+</span><span>experiment</span><span style="color:#72ab00;">$</span><span>num_measurements </span><span style="color:#72ab00;">&lt;- </span><span style="color:#b3933a;">24
+</span><span>
+</span><span style="color:#7f8989;"># insert a new item
+</span><span>experiment</span><span style="color:#72ab00;">$</span><span>temperature </span><span style="color:#72ab00;">&lt;- -</span><span style="color:#b3933a;">5.0
+</span><span>
+</span><span style="color:#7f8989;"># print the updated list
+</span><span style="color:#b39f04;">print</span><span>(experiment)
+</span></code></pre>
+
+    </div>
+  </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-margin-large-top">
+        <hr>
+        <ul class="uk-iconnav">
+  <li class="uk-margin-large-right">
+    <a href="mailto:radovan.bast@uit.no" uk-icon="icon: mail">radovan.bast@uit.no</a>
+  </li>
+  <li class="uk-margin-large-right">
+    <a href="https://github.com/bast/R-and-Python" target="_blank" uk-icon="icon: github">github.com/bast/R-and-Python</a>
+  </li>
+</ul>
+
+      </div>
+
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>
+    anchors.add();
+  </script>
+</html>

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+Allow: /
+Sitemap: https://bast.github.io/R-and-Python/sitemap.xml

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>R for Python developers and Python for R developers</title>
+    <link rel="shortcut icon" href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;/img/favicon.ico">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- uikit -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/css/uikit.min.css" integrity="sha256-f3SVFXP30MgahZ0Z7Lp1W02MuLgtiAtk8uFqTbGxNfY=" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/js/uikit.min.js" integrity="sha256-gHEvLzvpjU93VFTgu5myAgmc+0I1CzBzYe0YhTJ8uqI=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.19/dist/js/uikit-icons.min.js" integrity="sha256-PxrcCuBlFkPVlPsGxNzt59W3EKYOH79z+v/tq9uFS2M=" crossorigin="anonymous"></script>
+
+    <link href="https://bast.github.io/R-and-Python/style.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <div class="uk-container uk-container-expand uk-margin-large-bottom uk-margin-large-top">
+
+      <div class="markdown">
+        <div uk-grid>
+          <div class="uk-width-1-4@m">
+            
+
+<ul>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;shell/">Starting an interactive shell</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;script/">Running a script</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;command/">Running from command line</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;vectors/">Tuples&#x2F;lists&#x2F;vectors</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;lists/">Dictionaries (Python)&#x2F; lists (R)</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;filter/">Filtering</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;functions/">Functions</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;help/">Getting help</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;pitfalls/">Pitfalls that surprise</a>
+    </li>
+  
+    <li>
+      <a href="https:&#x2F;&#x2F;bast.github.io&#x2F;R-and-Python&#x2F;profiling/">Profiling memory and CPU time</a>
+    </li>
+  
+</ul>
+
+          </div>
+          <div class="uk-width-3-4@m">
+            
+  
+
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+  
+    
+    
+      <h1>Filtering</h1>
+      
+
+  
+  
+  
+
+  <div uk-grid>
+    <div class="uk-width-1-2@m">
+      <h3>Python</h3>
+      <pre data-lang="python" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-python "><code class="language-python" data-lang="python"><span>values </span><span style="color:#72ab00;">= </span><span>[</span><span style="color:#b3933a;">1</span><span>, </span><span style="color:#b3933a;">2</span><span>, </span><span style="color:#b3933a;">4</span><span>, </span><span style="color:#b3933a;">7</span><span>, </span><span style="color:#b3933a;">11</span><span>]
+</span><span>
+</span><span style="color:#7f8989;"># as list comprehension
+</span><span>only_small_values </span><span style="color:#72ab00;">= </span><span>[v </span><span style="color:#72ab00;">for </span><span>v </span><span style="color:#72ab00;">in </span><span>values </span><span style="color:#72ab00;">if </span><span>v </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">5</span><span>]
+</span><span>
+</span><span style="color:#7f8989;"># using filter
+</span><span>only_small_values </span><span style="color:#72ab00;">= </span><span style="color:#a2a001;">list</span><span>(</span><span style="color:#b39f04;">filter</span><span>(</span><span style="color:#72ab00;">lambda </span><span style="color:#5597d6;">v</span><span>: v </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">5</span><span>, values))
+</span><span>
+</span><span style="color:#7f8989;"># 0, 1, 2
+</span><span>indices </span><span style="color:#72ab00;">= </span><span>[i </span><span style="color:#72ab00;">for </span><span>i, </span><span style="color:#5597d6;">_ </span><span style="color:#72ab00;">in </span><span style="color:#b39f04;">enumerate</span><span>(values) </span><span style="color:#72ab00;">if </span><span>v </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">5</span><span>]
+</span></code></pre>
+
+    </div>
+    <div class="uk-width-1-2@m">
+      <h3>R</h3>
+      <pre data-lang="r" style="background-color:#f5f5f5;color:#1f1f1f;" class="language-r "><code class="language-r" data-lang="r"><span>values </span><span style="color:#72ab00;">&lt;- </span><span style="color:#b39f04;">c</span><span>(</span><span style="color:#b3933a;">1</span><span>, </span><span style="color:#b3933a;">2</span><span>, </span><span style="color:#b3933a;">4</span><span>, </span><span style="color:#b3933a;">7</span><span>, </span><span style="color:#b3933a;">NA</span><span>, </span><span style="color:#b3933a;">11</span><span>)
+</span><span>
+</span><span style="color:#7f8989;"># will contain the NA value
+</span><span>values[values </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">5</span><span>]
+</span><span>
+</span><span style="color:#7f8989;"># will not contain the NA value
+</span><span style="color:#b39f04;">subset</span><span>(values, values </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">5</span><span>)
+</span><span>
+</span><span style="color:#7f8989;"># indices where value &lt; 5: 1, 2, 3
+</span><span style="color:#b39f04;">which</span><span>(values </span><span style="color:#72ab00;">&lt; </span><span style="color:#b3933a;">5</span><span>)
+</span></code></pre>
+
+    </div>
+  </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="uk-margin-large-top">
+        <hr>
+        <ul class="uk-iconnav">
+  <li class="uk-margin-large-right">
+    <a href="mailto:radovan.bast@uit.no" uk-icon="icon: mail">radovan.bast@uit.no</a>
+  </li>
+  <li class="uk-margin-large-right">
+    <a href="https://github.com/bast/R-and-Python" target="_blank" uk-icon="icon: github">github.com/bast/R-and-Python</a>
+  </li>
+</ul>
+
+      </div>
+
+    </div>
+  </body>
+
+  <script src="https://cdn.jsdelivr.net/npm/anchor-js/anchor.min.js"></script>
+  <script>
+    anchors.add();
+  </script>
+</html>
