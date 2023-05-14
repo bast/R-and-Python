@@ -4,6 +4,8 @@ toc:
     folder: "shell"
   - title: "Running a script"
     folder: "script"
+  - title: "Running from command line"
+    folder: "command"
   - title: "Tuples/lists/vectors"
     folder: "vectors"
   - title: "Dictionaries (Python)/ lists (R)"
