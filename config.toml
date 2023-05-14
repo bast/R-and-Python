@@ -2,10 +2,10 @@
 
 # this variable has to be set but it is not used
 # inside the templates (end in '/')
-base_url = "example.org/"
+base_url = "https://bast.github.io/R-and-Python/"
 
 # When adapting the title, do not forget to also adjust base_url above
-title = "R for Python developers"
+title = "R for Python developers and Python for R developers"
 description = ""
 
 # Whether to automatically compile all Sass files in the sass directory
