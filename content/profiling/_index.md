@@ -62,7 +62,7 @@ print(approx_pi)
 x <- runif(n, min = 0, max = 1)
 y <- runif(n, min = 0, max = 1)
 
-# check if the points are within the unit circle
+# count how many points are within the unit circle
 count <- sum(x^2 + y^2 <= 1)
 
 # calculate the value of pi
