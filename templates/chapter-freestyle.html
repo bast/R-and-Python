@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {% set data = load_data(path="content/toc.yml") %}
+
+  {% for item in data.toc %}
+    {% set _path = "/" ~ item.folder ~ "/" %}
+    {% if section.path == _path %}
+      <h1>{{ item.title }}</h1>
+      {% break %}
+    {% endif %}
+  {% endfor %}
+
+  {{ section.content | safe }}
+{% endblock content %}
