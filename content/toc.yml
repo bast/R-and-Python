@@ -16,3 +16,5 @@ toc:
     folder: "help"
   - title: "Pitfalls that surprise"
     folder: "pitfalls"
+  - title: "Profiling memory and CPU time"
+    folder: "profiling"
