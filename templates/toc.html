@@ -3,7 +3,7 @@
 <ul>
   {% for item in data.toc %}
     <li>
-      <a href="/{{ item.folder }}/">{{ item.title }}</a>
+      <a href="{{ config.base_url }}{{ item.folder }}/">{{ item.title }}</a>
     </li>
   {% endfor %}
 </ul>
