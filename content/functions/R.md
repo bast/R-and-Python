@@ -3,13 +3,13 @@
 
 ```r
 num_small_elements <- function(v, threshold) {
-    n <- 0
-    for (i in v) {
-        if (is.numeric(i) && i < threshold) {
-            n <- n + 1
-        }
+  n <- 0
+  for (i in v) {
+    if (is.numeric(i) && i < threshold) {
+      n <- n + 1
     }
-    n
+  }
+  n
 }
 
 
